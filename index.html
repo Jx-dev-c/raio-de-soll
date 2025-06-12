@@ -1,0 +1,140 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Raio de Sol ☀️💖</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --main-bg: linear-gradient(135deg, #ffe6e6, #ffd1dc);
+      --accent-color: #ff4d6d;
+      --text-color: #3a3a3a;
+      --heart-color: #ff6b81;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: var(--main-bg);
+      height: 100vh;
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .card {
+      background: white;
+      padding: 2rem;
+      border-radius: 25px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+      max-width: 700px;
+      text-align: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .card h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 3rem;
+      color: var(--accent-color);
+      margin-bottom: 1rem;
+    }
+
+    .poem {
+      font-size: 1.2rem;
+      color: var(--text-color);
+      line-height: 1.8;
+    }
+
+    .heart {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: var(--heart-color);
+      transform: rotate(45deg);
+      animation: float 8s linear infinite;
+      opacity: 0.7;
+      z-index: 1;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: var(--heart-color);
+      border-radius: 50%;
+    }
+
+    .heart::before {
+      top: -10px;
+      left: 0;
+    }
+
+    .heart::after {
+      left: -10px;
+      top: 0;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(0) rotate(45deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-100vh) rotate(45deg);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <audio autoplay loop>
+    <source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" type="audio/mpeg">
+    Seu navegador não suporta áudio HTML5.
+  </audio>
+
+  <div class="card">
+    <h1>Raio de Sol ☀️</h1>
+    <p class="poem">
+      Em cada batida do meu coração,<br>
+      Existe um verso, uma doce canção.<br><br>
+      Seus olhos brilham como o mar ao luar,<br>
+      Sua presença me faz sempre sonhar.<br><br>
+      Seu sorriso aquece como o sol da manhã,<br>
+      Com você a vida é mais bela, mais sã.<br><br>
+      Estar contigo é doce emoção,<br>
+      É viver sempre em inspiração.<br><br>
+      Hoje te dedico este poema com carinho,<br>
+      Porque ao seu lado, nunca me sinto sozinho. 💖
+    </p>
+  </div>
+
+  <script>
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.classList.add('heart');
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.animationDuration = (4 + Math.random() * 4) + 's';
+      heart.style.width = heart.style.height = (15 + Math.random() * 10) + 'px';
+      document.body.appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 8000);
+    }
+
+    setInterval(createHeart, 250);
+  </script>
+</body>
+</html>
