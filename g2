@@ -1,0 +1,22 @@
+from datetime import datetime
+
+class AmorDaMinhaVida:
+    def __init__(self, nome):
+        self.nome = nome
+        self.data_encontro = datetime.now()
+        self.amor_eterno = True
+
+    def mensagem_dia_dos_namorados(self):
+        if self.amor_eterno:
+            return f"Feliz Dia dos Namorados, {self.nome} ❤️\n" \
+                   f"Desde que te conheci, meu coração entrou em loop infinito de amor!\n" \
+                   f"Juntos desde: {self.data_encontro.strftime('%d/%m/%Y')}\n" \
+                   "Te amo mais do que palavras (ou linhas de código) podem expressar."
+
+    def amar_para_sempre(self):
+        while self.amor_eterno:
+            print(f"Te amo, {self.nome}! ❤️")
+
+# Crie sua futura namorada (nome personalizado)
+futura_namorada = AmorDaMinhaVida("Raio de Sol")
+print(futura_namorada.mensagem_dia_dos_namorados())
